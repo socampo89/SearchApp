@@ -22,6 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <LinearLayout
+            android:id="@+id/linearLayout_mainContainer"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_default="wrap"
@@ -35,39 +36,91 @@
                 android:id="@+id/textView_product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_vertical_small"
                 android:maxLines="3"
                 android:ellipsize="end"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 tools:text="@string/test_text"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_product_price"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-                    android:textColor="@color/design_default_color_secondary"
-                    android:text="@string/price_text"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/textView_product_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
-            </LinearLayout>
+                android:layout_marginTop="@dimen/margin_vertical_small"
+                android:textColor="@color/design_default_color_secondary"
+                tools:text = "ARG 3000.0"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView_product_permalink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+                android:layout_marginTop="@dimen/margin_vertical_small"
+                android:textColor="@color/design_default_color_primary"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="https://www.google.com"/>
 
         </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/margin_horizontal_default"
+            android:layout_marginTop="@dimen/margin_vertical_small"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_mainContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_stock_information_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_information"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_quantity_sold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_vertical_small"
+                    android:textColor="@color/design_default_color_secondary"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_stock_information_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView_quantity_available"
+                    android:gravity="center"
+                    tools:text = "200"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_quantity_available"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_vertical_small"
+                    android:textColor="@color/design_default_color_secondary"
+                    app:layout_constraintTop_toBottomOf="@id/textView_stock_information_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_quantity_sold"
+                    android:gravity="center"
+                    tools:text = "1000"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

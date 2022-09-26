@@ -11,4 +11,6 @@ data class ProductEntity(
     @SerializedName("price") val price : Double? = null,
     @SerializedName("currency_id") val currencyId : String? = null,
     @SerializedName("permalink") val permalink : String? = null,
+    @SerializedName("available_quantity") val availableQuantity : Int? = null,
+    @SerializedName("sold_quantity") val soldQuantity : Int? = null,
     @SerializedName("thumbnail") val thumbnail : String? = null) : Parcelable

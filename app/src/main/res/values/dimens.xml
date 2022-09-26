@@ -5,4 +5,5 @@
     <dimen name="margin_vertical_default">16dp</dimen>
     <dimen name="ic_error_size">100dp</dimen>
     <dimen name="product_item_size">80dp</dimen>
+    <dimen name="margin_vertical_small">4dp</dimen>
 </resources>

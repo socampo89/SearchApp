@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="12dp"
     app:cardUseCompatPadding="true"
-    android:layout_margin="@dimen/margin_horizontal_medium"
     app:contentPadding="@dimen/margin_horizontal_default">
 
     <androidx.constraintlayout.widget.ConstraintLayout
