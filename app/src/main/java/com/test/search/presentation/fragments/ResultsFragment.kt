@@ -36,7 +36,14 @@ class ResultsFragment : Fragment() {
 
     private fun initViews(){
         setupResultsRecyclerView()
+        setupEmptyView()
         setEmptyView(true)
+    }
+
+    private fun setupEmptyView() {
+        binding.emptyView.onSearchButtonClicked = {
+            search(it)
+        }
     }
 
     private fun setupResultsRecyclerView() {

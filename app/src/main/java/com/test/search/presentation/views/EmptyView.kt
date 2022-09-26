@@ -11,10 +11,18 @@ class EmptyView @JvmOverloads constructor(
 ) : RelativeLayout(context, attrs, defStyleAttr) {
 
     private var binding : EmptyViewBinding
+    var onSearchButtonClicked : ((String) -> Unit?)? = null
     init {
         val layoutInflater = LayoutInflater.from(context)
         binding = EmptyViewBinding.inflate(layoutInflater, this, true)
+        initViews()
         hide()
+    }
+
+    private fun initViews(){
+        binding.buttonSearch.setOnClickListener {
+            onSearchButtonClicked?.invoke("Pokemon")
+        }
     }
 
     fun show(){

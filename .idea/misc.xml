@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-anydpi/ic_action_search.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2694746376811594" />
         <entry key="app/src/main/res/layout/empty_view.xml" value="0.1" />
@@ -13,6 +15,7 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/loading_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/product_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/search_view_layout.xml" value="0.11927083333333334" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.1203125" />
       </map>
     </option>
