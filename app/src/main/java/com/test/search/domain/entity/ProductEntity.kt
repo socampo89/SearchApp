@@ -7,8 +7,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class ProductEntity(
     @SerializedName("id") val id : String?,
-    @SerializedName("title") val title : String?,
-    @SerializedName("price") val price : Double?,
-    @SerializedName("currency_id") val currencyId : String?,
-    @SerializedName("permalink") val permalink : String?,
-    @SerializedName("thumbnail") val thumbnail : String?) : Parcelable
+    @SerializedName("title") val title : String? = null,
+    @SerializedName("price") val price : Double? = null,
+    @SerializedName("currency_id") val currencyId : String? = null,
+    @SerializedName("permalink") val permalink : String? = null,
+    @SerializedName("thumbnail") val thumbnail : String? = null) : Parcelable
