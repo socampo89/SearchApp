@@ -15,11 +15,11 @@
             android:id="@+id/imageView_product"
             android:layout_width="@dimen/product_item_size"
             android:layout_height="@dimen/product_item_size"
-            android:scaleType="fitCenter"
             android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout_mainContainer"
@@ -65,14 +65,15 @@
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_vertical_small"
             app:cardUseCompatPadding="true"
             app:contentPadding="@dimen/margin_horizontal_default"
-            android:layout_marginTop="@dimen/margin_vertical_small"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout_mainContainer"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_mainContainer">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -82,40 +83,40 @@
                     android:id="@+id/textView_stock_information_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/stock_information"
                     android:gravity="center"
+                    android:text="@string/stock_information"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textView_quantity_sold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_vertical_small"
-                    android:textColor="@color/design_default_color_secondary"
-                    app:layout_constraintTop_toBottomOf="@+id/textView_stock_information_title"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView_quantity_available"
                     android:gravity="center"
-                    tools:text = "200"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="@color/design_default_color_secondary"
                     android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+                    app:layout_constraintEnd_toStartOf="@+id/textView_quantity_available"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_stock_information_title"
+                    tools:text="200" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textView_quantity_available"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_vertical_small"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
                     android:textColor="@color/design_default_color_secondary"
-                    app:layout_constraintTop_toBottomOf="@id/textView_stock_information_title"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_quantity_sold"
-                    android:gravity="center"
-                    tools:text = "1000"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+                    app:layout_constraintTop_toBottomOf="@id/textView_stock_information_title"
+                    tools:text="1000" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
