@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ResultsFragment">
+
+    <fragment
+        android:id="@+id/ResultsFragment"
+        android:name="com.test.search.presentation.fragments.ResultsFragment"
+        android:label="@string/result_fragment_label"
+        tools:layout="@layout/fragment_results">
+
+        <action
+            android:id="@+id/action_Results_to_DetailFragment"
+            app:destination="@id/DetailFragment">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/DetailFragment"
+        android:name="com.test.search.presentation.fragments.DetailFragment"
+        android:label="@string/detail_fragment_label"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="ProductEntity"
+            app:argType="com.test.search.domain.entity.ProductEntity" />
+    </fragment>
+</navigation>

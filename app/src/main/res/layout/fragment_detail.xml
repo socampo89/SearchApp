@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal_medium">
+
+        <ImageView
+            android:id="@+id/imageView_product"
+            android:layout_width="@dimen/product_item_size"
+            android:layout_height="@dimen/product_item_size"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="wrap"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/margin_horizontal_medium"
+            app:layout_constraintStart_toEndOf="@+id/imageView_product"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                tools:text="@string/test_text"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/design_default_color_secondary"
+                    android:text="@string/price_text"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_product_permalink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

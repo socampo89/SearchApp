@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Search App</string>
+    <string name="action_search">Search</string>
+    <string name="search_view_query_hint">Search products…</string>
+    <string name="result_fragment_label">Search App</string>
+    <string name="detail_fragment_label">Detail</string>
+    <string name="error_message_default">An error has occurred, please try again</string>
+    <string name="empty_message_default">No results for search</string>
+    <string name="test_text">This is a test text</string>
+    <string name="price_text">Price:</string>
+</resources>
