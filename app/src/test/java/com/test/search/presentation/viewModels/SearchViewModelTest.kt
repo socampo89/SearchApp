@@ -3,10 +3,10 @@ package com.test.search.presentation.viewModels
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.test.search.CoroutinesTestRule
 import com.test.search.domain.entity.ProductEntity
+import com.test.search.domain.entity.SearchEntity
 import com.test.search.domain.use_cases.search.SearchUseCase
 import com.test.search.domain.use_cases.search.SearchUseCases
 import com.test.search.getOrAwaitValue
-import com.test.search.presentation.networking.SearchResponse
 import com.test.search.presentation.networking.helpers.Resource
 import junit.framework.TestCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -49,7 +49,7 @@ class SearchViewModelTest {
         val query = "Creatina"
         val results = mutableListOf(ProductEntity(id = "MX1", title = "Creatina 1"), ProductEntity(id = "MX2", title = "Creatina 2"))
         Mockito.`when`(searchUseCases.searchUseCase.invoke(query)).thenReturn(
-            Resource.Success(SearchResponse(query = query, results = results))
+            Resource.Success(SearchEntity(query = query, results = results))
         )
         viewModel.search(query)
         val errorValue = viewModel.errorLiveData.getOrAwaitValue()

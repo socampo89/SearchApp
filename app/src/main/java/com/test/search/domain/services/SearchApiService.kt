@@ -1,6 +1,6 @@
 package com.test.search.domain.services
 
-import com.test.search.presentation.networking.SearchResponse
+import com.test.search.data.models.SearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

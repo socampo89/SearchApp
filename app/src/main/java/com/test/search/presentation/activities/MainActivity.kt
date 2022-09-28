@@ -1,23 +1,25 @@
 package com.test.search.presentation.activities
 
-import android.content.res.ColorStateList
-import android.graphics.Color
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.color.MaterialColors
 import com.test.search.R
 import com.test.search.databinding.ActivityMainBinding
 import com.test.search.presentation.fragments.ResultsFragment
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -72,8 +74,8 @@ class MainActivity : AppCompatActivity() {
         navController.currentDestination?.let {
             setupSearchViewVisibility(it)
         }
-    }
 
+    }
 
     private fun setupSearchViewVisibility(destination: NavDestination) {
         if (destination.id == R.id.DetailFragment) {

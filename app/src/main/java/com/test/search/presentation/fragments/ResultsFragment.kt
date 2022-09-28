@@ -1,12 +1,15 @@
 package com.test.search.presentation.fragments
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.test.search.R
 import com.test.search.databinding.FragmentResultsBinding
 import com.test.search.domain.entity.ProductEntity
@@ -107,6 +110,15 @@ class ResultsFragment : Fragment() {
         val args = Bundle()
         args.putParcelable(DetailFragment.PRODUCT_ENTITY_ARG,productEntity)
         navController.navigate(R.id.action_Results_to_DetailFragment, args = args)
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        var layoutManager : RecyclerView.LayoutManager =  LinearLayoutManager(requireContext())
+        if (newConfig.orientation ==Configuration.ORIENTATION_LANDSCAPE) {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+        }
+        binding.recyclerViewResults.layoutManager = layoutManager
     }
 
     fun search(query: String?) {

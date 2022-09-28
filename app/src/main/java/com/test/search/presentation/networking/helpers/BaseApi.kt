@@ -1,8 +1,6 @@
-package com.test.search.domain.repository
+package com.test.search.presentation.networking.helpers
 
 import com.google.gson.Gson
-import com.test.search.presentation.networking.helpers.ErrorResponse
-import com.test.search.presentation.networking.helpers.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody
@@ -10,7 +8,7 @@ import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
 
-abstract class BaseRepository {
+class BaseApi {
 
     suspend fun <T> safeApiCall(apiToBeCalled: suspend () -> Response<T>): Resource<T> {
  

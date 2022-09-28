@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val searchModule = module {
     factory(named(SearchApiService::class.getFullName())) { getRetrofit("https://api.mercadolibre.com/").create(SearchApiService::class.java) }
-    factory<SearchRepository>{ SearchRepositoryImpl(get(named(SearchApiService::class.getFullName()))) }
+    factory<SearchRepository>{ SearchRepositoryImpl(get(),get(named(SearchApiService::class.getFullName()))) }
     factory { SearchUseCases(SearchUseCase(get())) }
     viewModel { SearchViewModel(get()) }
 }
